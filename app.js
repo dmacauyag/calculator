@@ -13,6 +13,7 @@ var btnAdd = document.querySelector('#addition')
 var btnSub = document.querySelector('#subtraction')
 var btnMul = document.querySelector('#multiplication')
 var btnDiv = document.querySelector('#division')
+var btnResult = document.querySelector('#result')
 
 btnZero.addEventListener('click', displayValue)
 btnOne.addEventListener('click', displayValue)
@@ -28,8 +29,18 @@ btnAdd.addEventListener('click', displayValue)
 btnSub.addEventListener('click', displayValue)
 btnMul.addEventListener('click', displayValue)
 btnDiv.addEventListener('click', displayValue)
+btnResult.addEventListener('click', displayResult)
 
 // Displays the button pressed on the readout
 function displayValue() {
-  readout.innerText += this.value
+  if (readout.innerText == '0') {
+    readout.innerText = this.value
+  } else {
+    readout.innerText += this.value
+  }
+}
+
+// Gets the value in console and evaluates
+function displayResult() {
+    readout.innerText = eval(readout.innerText)
 }
