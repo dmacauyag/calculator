@@ -10,7 +10,9 @@ function displayValue() {
   if (readout.innerText == '0') {
     readout.innerText = this.value
   } else if (this.value == '=') {
-    displayResult()
+      displayResult()
+  } else if (this.value == 'clear') {
+      clearConsole()
   } else {
       readout.innerText += this.value
   }
@@ -19,4 +21,9 @@ function displayValue() {
 // Gets the value in console and evaluates
 function displayResult() {
     readout.innerText = eval(readout.innerText)
+}
+
+// Clears the console
+function clearConsole() {
+  readout.innerText = "0"
 }
