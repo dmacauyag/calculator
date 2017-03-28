@@ -1,13 +1,15 @@
 var readout = document.querySelector('#readout')
-var digits = document.querySelectorAll('.digit')
+var inputs = document.querySelectorAll('.input')
 
-for (var i = 0; i < digits.length; i++) {
-  digits[i].addEventListener('click', displayValue)
+for (var i = 0; i < inputs.length; i++) {
+  inputs[i].addEventListener('click', displayValue)
 }
 
 // Displays the button pressed on the readout
 function displayValue() {
-  if (readout.innerText == '0') {
+  if (this.className == 'input operator' && readout.innerText == '0') {
+    console.log('not a valid initial input');
+  } else if (readout.innerText == '0') {
     readout.innerText = this.value
   } else if (this.value == '=') {
       displayResult()
