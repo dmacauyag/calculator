@@ -1,5 +1,6 @@
 var readout = document.querySelector('#readout')
 var inputs = document.querySelectorAll('.input')
+var previousInput = readout.innerText[readout.innerText.length - 1]
 
 for (var i = 0; i < inputs.length; i++) {
   inputs[i].addEventListener('click', displayValue)
